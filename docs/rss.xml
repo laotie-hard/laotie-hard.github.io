@@ -1,5 +1,39 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>烙铁的博客</title><link>https://laotie-hard.github.io</link><description>某985大一新生学习计算机的日常</description><copyright>烙铁的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://k.sinaimg.cn/n/spider20191226/384/w640h544/20191226/54ab-imfiehq2615626.jpg/w700d1q75cms.jpg</url><title>avatar</title><link>https://laotie-hard.github.io</link></image><lastBuildDate>Sun, 18 Oct 2026 10:06:38 +0000</lastBuildDate><managingEditor>烙铁的博客</managingEditor><ttl>60</ttl><webMaster>烙铁的博客</webMaster><item><title>cslearning-数据结构</title><link>https://laotie-hard.github.io/post/cslearning--shu-ju-jie-gou.html</link><description>//由于我先在word上做笔记，部分大小写可能出现混乱（首字母）
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>烙铁的博客</title><link>https://laotie-hard.github.io</link><description>某985大一新生学习计算机的日常</description><copyright>烙铁的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://k.sinaimg.cn/n/spider20191226/384/w640h544/20191226/54ab-imfiehq2615626.jpg/w700d1q75cms.jpg</url><title>avatar</title><link>https://laotie-hard.github.io</link></image><lastBuildDate>Tue, 20 Oct 2026 01:36:19 +0000</lastBuildDate><managingEditor>烙铁的博客</managingEditor><ttl>60</ttl><webMaster>烙铁的博客</webMaster><item><title>输入</title><link>https://laotie-hard.github.io/post/shu-ru.html</link><description>一行若干数：
+int x;
+while(cin &gt;&gt; x){
+}
+n行若干数：
+int n;
+while(cin &gt;&gt; n){ 
+    for(int i=0;i&lt;n;i++){
+        cin &gt;&gt; arr[i];
+    }
+}
+若干行若干数：
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;sstream&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+int main(){
+    string line;
+    while(getline(cin, line)){
+        stringstream ss(line);
+        vector&lt;int&gt; v;     //自动变大小
+        int num;
+        while(ss &gt;&gt; num){
+            v.push_back(num);
+        }
+        for(int i = 0; i &lt; v.size(); i++){
+            if(i != 0) cout &lt;&lt; ' ';    //输入空格（末尾无空格）
+            cout &lt;&lt; v[i];
+        }
+        cout &lt;&lt; endl;
+    }
+    return 0;
+}。</description><guid isPermaLink="true">https://laotie-hard.github.io/post/shu-ru.html</guid><pubDate>Tue, 20 Oct 2026 01:35:54 +0000</pubDate></item><item><title>cslearning-数据结构</title><link>https://laotie-hard.github.io/post/cslearning--shu-ju-jie-gou.html</link><description>//由于我先在word上做笔记，部分大小写可能出现混乱（首字母）
 一：线性表
   1.数据元素的有限序列，由起始节点到终端结点，前驱与后继 
   2.1顺序存储：占用一片连续的存储空间
