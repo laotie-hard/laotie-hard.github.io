@@ -14,6 +14,7 @@
 int x;
 while(cin >> x){
 }
+
 n行若干数：
 int n;
 while(cin >> n){ 
@@ -21,6 +22,7 @@ while(cin >> n){
         cin >> arr[i];
     }
 }
+
 若干行若干数：
 #include <iostream>
 #include <string>
@@ -32,7 +34,7 @@ int main(){
     string line;
     while(getline(cin, line)){
         stringstream ss(line);
-        vector<int> v;     //自动变大小
+        vector<int> v; 
         int num;
         while(ss >> num){
             v.push_back(num);
@@ -50,6 +52,7 @@ int main(){
 int x;
 while(cin >> x){
 }
+
 n行若干数：
 int n;
 while(cin >> n){ 
@@ -57,6 +60,7 @@ while(cin >> n){
         cin >> arr[i];
     }
 }
+
 若干行若干数：
 #include <iostream>
 #include <string>
@@ -68,7 +72,7 @@ int main(){
     string line;
     while(getline(cin, line)){
         stringstream ss(line);
-        vector<int> v;     //自动变大小
+        vector<int> v; 
         int num;
         while(ss >> num){
             v.push_back(num);
@@ -144,15 +148,15 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <div class="markdown-body" id="postBody"><p>一行若干数：<br>
 int x;<br>
 while(cin &gt;&gt; x){<br>
-}<br>
-n行若干数：<br>
+}</p>
+<p>n行若干数：<br>
 int n;<br>
 while(cin &gt;&gt; n){<br>
 for(int i=0;i&lt;n;i++){<br>
 cin &gt;&gt; arr[i];<br>
 }<br>
-}<br>
-若干行若干数：<br>
+}</p>
+<p>若干行若干数：<br>
 #include <br>
 #include <br>
 #include <br>
@@ -162,7 +166,7 @@ using namespace std;</p>
 string line;<br>
 while(getline(cin, line)){<br>
 stringstream ss(line);<br>
-vector v;     //自动变大小<br>
+vector v;<br>
 int num;<br>
 while(ss &gt;&gt; num){<br>
 v.push_back(num);<br>
