@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>烙铁的博客</title><link>https://laotie-hard.github.io</link><description>某985大一新生学习计算机的日常</description><copyright>烙铁的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://k.sinaimg.cn/n/spider20191226/384/w640h544/20191226/54ab-imfiehq2615626.jpg/w700d1q75cms.jpg</url><title>avatar</title><link>https://laotie-hard.github.io</link></image><lastBuildDate>Mon, 02 Nov 2026 12:08:06 +0000</lastBuildDate><managingEditor>烙铁的博客</managingEditor><ttl>60</ttl><webMaster>烙铁的博客</webMaster><item><title>srtp-Ray Tracing in One Weekend</title><link>https://laotie-hard.github.io/post/srtp-Ray%20Tracing%20in%20One%20Weekend.html</link><description># **一：**
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>烙铁的博客</title><link>https://laotie-hard.github.io</link><description>某985大一新生学习计算机的日常</description><copyright>烙铁的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://k.sinaimg.cn/n/spider20191226/384/w640h544/20191226/54ab-imfiehq2615626.jpg/w700d1q75cms.jpg</url><title>avatar</title><link>https://laotie-hard.github.io</link></image><lastBuildDate>Mon, 02 Nov 2026 14:02:36 +0000</lastBuildDate><managingEditor>烙铁的博客</managingEditor><ttl>60</ttl><webMaster>烙铁的博客</webMaster><item><title>srtp-Ray Tracing in One Weekend</title><link>https://laotie-hard.github.io/post/srtp-Ray%20Tracing%20in%20One%20Weekend.html</link><description># **一：**
 ## 输出图像
 1.
 ```
@@ -7,26 +7,26 @@
 using namespace std;
 int main() {
 
-    // Image
+    // Image 像素：256*256
 
     int image_width = 256;
     int image_height = 256;
 
     // Render
 
-    cout &lt;&lt; 'P3\n' &lt;&lt; image_width &lt;&lt; ' ' &lt;&lt; image_height &lt;&lt; '\n255\n';
+    cout &lt;&lt; 'P3\n' &lt;&lt; image_width &lt;&lt; ' ' &lt;&lt; image_height &lt;&lt; '\n255\n';  //P2:定义格式 256：宽高 255：颜色通道最大值（0~255）
 
-    for (int j = 0; j &lt; image_height; j++) {
-        for (int i = 0; i &lt; image_width; i++) {
-            auto r = double(i) / (image_width - 1);
+    for (int j = 0; j &lt; image_height; j++) {                    //行
+        for (int i = 0; i &lt; image_width; i++) {                 //列
+            auto r = double(i) / (image_width - 1);          //映射：整数转[0.0,1.0]的数，保证精度
             auto g = double(j) / (image_height - 1);
             auto b = 0.0;
 
-            int ir = int(255.999 * r);
+            int ir = int(255.999 * r);           //考虑到浮点数误差，用255.999而不是255保证0~255落位
             int ig = int(255.999 * g);
             int ib = int(255.999 * b);
 
-            cout &lt;&lt; ir &lt;&lt; ' ' &lt;&lt; ig &lt;&lt; ' ' &lt;&lt; ib &lt;&lt; '\n';
+            cout &lt;&lt; ir &lt;&lt; ' ' &lt;&lt; ig &lt;&lt; ' ' &lt;&lt; ib &lt;&lt; '\n';     //红绿蓝代表一个像素
         }
     }
     return 0;
