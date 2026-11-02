@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>烙铁的博客</title><link>https://laotie-hard.github.io</link><description>某985大一新生学习计算机的日常</description><copyright>烙铁的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://k.sinaimg.cn/n/spider20191226/384/w640h544/20191226/54ab-imfiehq2615626.jpg/w700d1q75cms.jpg</url><title>avatar</title><link>https://laotie-hard.github.io</link></image><lastBuildDate>Mon, 02 Nov 2026 09:44:48 +0000</lastBuildDate><managingEditor>烙铁的博客</managingEditor><ttl>60</ttl><webMaster>烙铁的博客</webMaster><item><title>srtp-Ray Tracing in One Weekend</title><link>https://laotie-hard.github.io/post/srtp-Ray%20Tracing%20in%20One%20Weekend.html</link><description># **一：**
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>烙铁的博客</title><link>https://laotie-hard.github.io</link><description>某985大一新生学习计算机的日常</description><copyright>烙铁的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://k.sinaimg.cn/n/spider20191226/384/w640h544/20191226/54ab-imfiehq2615626.jpg/w700d1q75cms.jpg</url><title>avatar</title><link>https://laotie-hard.github.io</link></image><lastBuildDate>Mon, 02 Nov 2026 09:48:45 +0000</lastBuildDate><managingEditor>烙铁的博客</managingEditor><ttl>60</ttl><webMaster>烙铁的博客</webMaster><item><title>srtp-Ray Tracing in One Weekend</title><link>https://laotie-hard.github.io/post/srtp-Ray%20Tracing%20in%20One%20Weekend.html</link><description># **一：**
 ## 输出图像
 1.
 ```
@@ -95,7 +95,8 @@ int main(){
   2.1顺序存储：占用一片连续的存储空间
   储存空间不灵活，空间复杂度高,插入删除麻烦
   例如：多项式的系数与指数存放：
-  typedef struct{
+```  
+typedef struct{
        float p;  //也可以typedef char/~ elemtype;方便后续管理维护
        int e;
   }poly;
@@ -103,9 +104,11 @@ int main(){
        poly *elem;  //poly类型的数组（需申请内存，注意指针的类型） or elemtype elem[max];(#define max n) or new elemtype(n);
        int length;
   }list;
+```
 通常预定一些常量：对1错0 overflow-2；int-&gt;Status(判断返回类型)
 2.2功能实现：
 1.初始化:
+```
 Status inilist (list &amp; L){
 	L.elem=new elemtype(max);
 	If(!L.elem)  //查看内存地址
@@ -113,12 +116,16 @@ Status inilist (list &amp; L){
 	L.length=0;
 	Return OK;
 }
+```
 2.删除：
+```
 Void destroylist(list &amp;L){
 	if(L.elem)
 		Delete L.elem;
 }
+```
 3.取值：
+```
 Status getelem(list L,int i,int &amp;e){
 	//确定i值
 	If(i&lt;1||i&gt;L.length)
@@ -127,7 +134,11 @@ Status getelem(list L,int i,int &amp;e){
 
 	return 1;
 }
-	4.查找：
+```
+
+4.查找：
+
+```
 	int findelem(list L,int e){
 		int i=0;
 		for(L.elem[max]){
@@ -137,8 +148,10 @@ Status getelem(list L,int i,int &amp;e){
 	}
 	return 0;
 	}
-	ASL=P(被寻找所需次数)*C（被找到概率）的n项求和
-	5.插入：
+```
+ASL=P(被寻找所需次数)*C（被找到概率）的n项求和
+5.插入：
+```
 	Status inputlist(list &amp;L,int i,int e){
 		If(i&lt;1||i&gt;L.length+1)
 			Return 0;
@@ -151,7 +164,9 @@ Status getelem(list L,int i,int &amp;e){
 		L.length++;
 		Return OK; 
 	}
-	6.删除：
+```
+6.删除：
+```
 	Int delrteelem(list&amp;L,int i,int &amp;e){
 		If(i&lt;1||i&gt;L.length)
 			Return 0;
@@ -159,6 +174,7 @@ Status getelem(list L,int i,int &amp;e){
 		For(int t=i;t&lt;L.length;t++)
 			L.elem[t-1]=L.elem[t];
 		L.length--;
-		Return e;	
+		Return e;	}
+```
 小总结:
 	对于for循环的书写需注意（条件），数组下标与个数之间的转化，对于输入的边界审查，代码的格式细节。</description><guid isPermaLink="true">https://laotie-hard.github.io/post/cslearning--shu-ju-jie-gou---shun-xu-xian-xing-biao.html</guid><pubDate>Sun, 18 Oct 2026 07:33:08 +0000</pubDate></item><item><title>cslearning</title><link>https://laotie-hard.github.io/post/cslearning.html</link><description>hello world。</description><guid isPermaLink="true">https://laotie-hard.github.io/post/cslearning.html</guid><pubDate>Tue, 13 Oct 2026 15:39:34 +0000</pubDate></item></channel></rss>

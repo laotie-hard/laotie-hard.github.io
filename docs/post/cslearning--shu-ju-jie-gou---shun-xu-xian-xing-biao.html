@@ -16,7 +16,8 @@
   2.1顺序存储：占用一片连续的存储空间
   储存空间不灵活，空间复杂度高,插入删除麻烦
   例如：多项式的系数与指数存放：
-  typedef struct{
+```  
+typedef struct{
        float p;  //也可以typedef char/~ elemtype;方便后续管理维护
        int e;
   }poly;
@@ -24,9 +25,11 @@
        poly *elem;  //poly类型的数组（需申请内存，注意指针的类型） or elemtype elem[max];(#define max n) or new elemtype(n);
        int length;
   }list;
+```
 通常预定一些常量：对1错0 overflow-2；int->Status(判断返回类型)
 2.2功能实现：
 1.初始化:
+```
 Status inilist (list & L){
 	L.elem=new elemtype(max);
 	If(!L.elem)  //查看内存地址
@@ -34,12 +37,16 @@ Status inilist (list & L){
 	L.length=0;
 	Return OK;
 }
+```
 2.删除：
+```
 Void destroylist(list &L){
 	if(L.elem)
 		Delete L.elem;
 }
+```
 3.取值：
+```
 Status getelem(list L,int i,int &e){
 	//确定i值
 	If(i<1||i>L.length)
@@ -48,7 +55,11 @@ Status getelem(list L,int i,int &e){
 
 	return 1;
 }
-	4.查找：
+```
+
+4.查找：
+
+```
 	int findelem(list L,int e){
 		int i=0;
 		for(L.elem[max]){
@@ -58,8 +69,10 @@ Status getelem(list L,int i,int &e){
 	}
 	return 0;
 	}
-	ASL=P(被寻找所需次数)*C（被找到概率）的n项求和
-	5.插入：
+```
+ASL=P(被寻找所需次数)*C（被找到概率）的n项求和
+5.插入：
+```
 	Status inputlist(list &L,int i,int e){
 		If(i<1||i>L.length+1)
 			Return 0;
@@ -72,7 +85,9 @@ Status getelem(list L,int i,int &e){
 		L.length++;
 		Return OK; 
 	}
-	6.删除：
+```
+6.删除：
+```
 	Int delrteelem(list&L,int i,int &e){
 		If(i<1||i>L.length)
 			Return 0;
@@ -80,7 +95,8 @@ Status getelem(list L,int i,int &e){
 		For(int t=i;t<L.length;t++)
 			L.elem[t-1]=L.elem[t];
 		L.length--;
-		Return e;	
+		Return e;	}
+```
 小总结:
 	对于for循环的书写需注意（条件），数组下标与个数之间的转化，对于输入的边界审查，代码的格式细节。">
 <meta property="og:title" content="cslearning-数据结构-顺序线性表">
@@ -90,7 +106,8 @@ Status getelem(list L,int i,int &e){
   2.1顺序存储：占用一片连续的存储空间
   储存空间不灵活，空间复杂度高,插入删除麻烦
   例如：多项式的系数与指数存放：
-  typedef struct{
+```  
+typedef struct{
        float p;  //也可以typedef char/~ elemtype;方便后续管理维护
        int e;
   }poly;
@@ -98,9 +115,11 @@ Status getelem(list L,int i,int &e){
        poly *elem;  //poly类型的数组（需申请内存，注意指针的类型） or elemtype elem[max];(#define max n) or new elemtype(n);
        int length;
   }list;
+```
 通常预定一些常量：对1错0 overflow-2；int->Status(判断返回类型)
 2.2功能实现：
 1.初始化:
+```
 Status inilist (list & L){
 	L.elem=new elemtype(max);
 	If(!L.elem)  //查看内存地址
@@ -108,12 +127,16 @@ Status inilist (list & L){
 	L.length=0;
 	Return OK;
 }
+```
 2.删除：
+```
 Void destroylist(list &L){
 	if(L.elem)
 		Delete L.elem;
 }
+```
 3.取值：
+```
 Status getelem(list L,int i,int &e){
 	//确定i值
 	If(i<1||i>L.length)
@@ -122,7 +145,11 @@ Status getelem(list L,int i,int &e){
 
 	return 1;
 }
-	4.查找：
+```
+
+4.查找：
+
+```
 	int findelem(list L,int e){
 		int i=0;
 		for(L.elem[max]){
@@ -132,8 +159,10 @@ Status getelem(list L,int i,int &e){
 	}
 	return 0;
 	}
-	ASL=P(被寻找所需次数)*C（被找到概率）的n项求和
-	5.插入：
+```
+ASL=P(被寻找所需次数)*C（被找到概率）的n项求和
+5.插入：
+```
 	Status inputlist(list &L,int i,int e){
 		If(i<1||i>L.length+1)
 			Return 0;
@@ -146,7 +175,9 @@ Status getelem(list L,int i,int &e){
 		L.length++;
 		Return OK; 
 	}
-	6.删除：
+```
+6.删除：
+```
 	Int delrteelem(list&L,int i,int &e){
 		If(i<1||i>L.length)
 			Return 0;
@@ -154,7 +185,8 @@ Status getelem(list L,int i,int &e){
 		For(int t=i;t<L.length;t++)
 			L.elem[t-1]=L.elem[t];
 		L.length--;
-		Return e;	
+		Return e;	}
+```
 小总结:
 	对于for循环的书写需注意（条件），数组下标与个数之间的转化，对于输入的边界审查，代码的格式细节。">
 <meta property="og:type" content="article">
@@ -232,73 +264,80 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 1.数据元素的有限序列，由起始节点到终端结点，前驱与后继<br>
 2.1顺序存储：占用一片连续的存储空间<br>
 储存空间不灵活，空间复杂度高,插入删除麻烦<br>
-例如：多项式的系数与指数存放：<br>
-typedef struct{<br>
-float p;  //也可以typedef char/~ elemtype;方便后续管理维护<br>
-int e;<br>
-}poly;<br>
-typedef struct{<br>
-poly *elem;  //poly类型的数组（需申请内存，注意指针的类型） or elemtype elem[max];(#define max n) or new elemtype(n);<br>
-int length;<br>
-}list;<br>
-通常预定一些常量：对1错0 overflow-2；int-&gt;Status(判断返回类型)<br>
-2.2功能实现：<br>
-1.初始化:<br>
-Status inilist (list &amp; L){<br>
-L.elem=new elemtype(max);<br>
-If(!L.elem)  //查看内存地址<br>
-Exit(overflow);  //防止分配失败<br>
-L.length=0;<br>
-Return OK;<br>
-}<br>
-2.删除：<br>
-Void destroylist(list &amp;L){<br>
-if(L.elem)<br>
-Delete L.elem;<br>
-}<br>
-3.取值：<br>
-Status getelem(list L,int i,int &amp;e){<br>
-//确定i值<br>
-If(i&lt;1||i&gt;L.length)<br>
-Return 0;<br>
-e=L.elem[i-1];</p>
-<pre class="notranslate"><code class="notranslate">return 1;
+例如：多项式的系数与指数存放：</p>
+<pre class="notranslate"><code class="notranslate">typedef struct{
+       float p;  //也可以typedef char/~ elemtype;方便后续管理维护
+       int e;
+  }poly;
+  typedef struct{
+       poly *elem;  //poly类型的数组（需申请内存，注意指针的类型） or elemtype elem[max];(#define max n) or new elemtype(n);
+       int length;
+  }list;
 </code></pre>
-<p>}<br>
-4.查找：<br>
-int findelem(list L,int e){<br>
-int i=0;<br>
-for(L.elem[max]){<br>
-if(L.elem[i]==e)<br>
-return (i+1);<br>
-i++;<br>
-}<br>
-return 0;<br>
-}<br>
-ASL=P(被寻找所需次数)*C（被找到概率）的n项求和<br>
-5.插入：<br>
-Status inputlist(list &amp;L,int i,int e){<br>
-If(i&lt;1||i&gt;L.length+1)<br>
-Return 0;<br>
-If(L.length==max)<br>
-Reurn 0;<br>
-For(int t=L.length-1;t&gt;=i-1;t--){<br>
-L.elem[t]=L.elem[t+1];<br>
-}<br>
-L.elem[i-1]=e;<br>
-L.length++;<br>
-Return OK;<br>
-}<br>
-6.删除：<br>
-Int delrteelem(list&amp;L,int i,int &amp;e){<br>
-If(i&lt;1||i&gt;L.length)<br>
-Return 0;<br>
-e=L.elem[i-1];<br>
-For(int t=i;t&lt;L.length;t++)<br>
-L.elem[t-1]=L.elem[t];<br>
-L.length--;<br>
-Return e;<br>
-小总结:<br>
+<p>通常预定一些常量：对1错0 overflow-2；int-&gt;Status(判断返回类型)<br>
+2.2功能实现：<br>
+1.初始化:</p>
+<pre class="notranslate"><code class="notranslate">Status inilist (list &amp; L){
+	L.elem=new elemtype(max);
+	If(!L.elem)  //查看内存地址
+		Exit(overflow);  //防止分配失败
+	L.length=0;
+	Return OK;
+}
+</code></pre>
+<p>2.删除：</p>
+<pre class="notranslate"><code class="notranslate">Void destroylist(list &amp;L){
+	if(L.elem)
+		Delete L.elem;
+}
+</code></pre>
+<p>3.取值：</p>
+<pre class="notranslate"><code class="notranslate">Status getelem(list L,int i,int &amp;e){
+	//确定i值
+	If(i&lt;1||i&gt;L.length)
+		Return 0;
+	e=L.elem[i-1];
+
+	return 1;
+}
+</code></pre>
+<p>4.查找：</p>
+<pre class="notranslate"><code class="notranslate">	int findelem(list L,int e){
+		int i=0;
+		for(L.elem[max]){
+			if(L.elem[i]==e)
+				return (i+1);
+			i++;
+	}
+	return 0;
+	}
+</code></pre>
+<p>ASL=P(被寻找所需次数)*C（被找到概率）的n项求和<br>
+5.插入：</p>
+<pre class="notranslate"><code class="notranslate">	Status inputlist(list &amp;L,int i,int e){
+		If(i&lt;1||i&gt;L.length+1)
+			Return 0;
+		If(L.length==max)
+				Reurn 0;
+		For(int t=L.length-1;t&gt;=i-1;t--){
+				L.elem[t]=L.elem[t+1];
+		}
+		L.elem[i-1]=e;	
+		L.length++;
+		Return OK; 
+	}
+</code></pre>
+<p>6.删除：</p>
+<pre class="notranslate"><code class="notranslate">	Int delrteelem(list&amp;L,int i,int &amp;e){
+		If(i&lt;1||i&gt;L.length)
+			Return 0;
+		e=L.elem[i-1];
+		For(int t=i;t&lt;L.length;t++)
+			L.elem[t-1]=L.elem[t];
+		L.length--;
+		Return e;	}
+</code></pre>
+<p>小总结:<br>
 对于for循环的书写需注意（条件），数组下标与个数之间的转化，对于输入的边界审查，代码的格式细节</p></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
