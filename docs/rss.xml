@@ -1,5 +1,44 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>烙铁的博客</title><link>https://laotie-hard.github.io</link><description>某985大一新生学习计算机的日常</description><copyright>烙铁的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://k.sinaimg.cn/n/spider20191226/384/w640h544/20191226/54ab-imfiehq2615626.jpg/w700d1q75cms.jpg</url><title>avatar</title><link>https://laotie-hard.github.io</link></image><lastBuildDate>Sun, 01 Nov 2026 12:51:32 +0000</lastBuildDate><managingEditor>烙铁的博客</managingEditor><ttl>60</ttl><webMaster>烙铁的博客</webMaster><item><title>输入</title><link>https://laotie-hard.github.io/post/shu-ru.html</link><description>一行若干数：
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>烙铁的博客</title><link>https://laotie-hard.github.io</link><description>某985大一新生学习计算机的日常</description><copyright>烙铁的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://k.sinaimg.cn/n/spider20191226/384/w640h544/20191226/54ab-imfiehq2615626.jpg/w700d1q75cms.jpg</url><title>avatar</title><link>https://laotie-hard.github.io</link></image><lastBuildDate>Mon, 02 Nov 2026 09:43:11 +0000</lastBuildDate><managingEditor>烙铁的博客</managingEditor><ttl>60</ttl><webMaster>烙铁的博客</webMaster><item><title>srtp-Ray Tracing in One Weekend</title><link>https://laotie-hard.github.io/post/srtp-Ray%20Tracing%20in%20One%20Weekend.html</link><description># **一：**
+## 输出图像
+1.
+```
+#include &lt;iostream&gt;
+using namespace std;
+int main() {
+
+    // Image
+
+    int image_width = 256;
+    int image_height = 256;
+
+    // Render
+
+    cout &lt;&lt; 'P3\n' &lt;&lt; image_width &lt;&lt; ' ' &lt;&lt; image_height &lt;&lt; '\n255\n';
+
+    for (int j = 0; j &lt; image_height; j++) {
+        for (int i = 0; i &lt; image_width; i++) {
+            auto r = double(i) / (image_width - 1);
+            auto g = double(j) / (image_height - 1);
+            auto b = 0.0;
+
+            int ir = int(255.999 * r);
+            int ig = int(255.999 * g);
+            int ib = int(255.999 * b);
+
+            cout &lt;&lt; ir &lt;&lt; ' ' &lt;&lt; ig &lt;&lt; ' ' &lt;&lt; ib &lt;&lt; '\n';
+        }
+    }
+    return 0;
+}
+```
+2.生成image.ppm:
+编译找到路径
+在cmd中逐行输入：
+D:
+cd 路径（直到release）
+exe&gt;image.ppm
+3.用查看器打开。</description><guid isPermaLink="true">https://laotie-hard.github.io/post/srtp-Ray%20Tracing%20in%20One%20Weekend.html</guid><pubDate>Mon, 02 Nov 2026 09:42:41 +0000</pubDate></item><item><title>输入</title><link>https://laotie-hard.github.io/post/shu-ru.html</link><description>一行若干数：
 int x;
 while(cin &gt;&gt; x){
 }
