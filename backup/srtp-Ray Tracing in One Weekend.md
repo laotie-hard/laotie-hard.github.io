@@ -44,7 +44,7 @@ int main() {
 在cmd中逐行输入：
 D:
 cd 路径（直到release）
-exe>image.ppm
+.\A.exe > image.ppm
 3.用查看器打开
 
 <img width="256" height="256" alt="Image" src="https://github.com/user-attachments/assets/7ba0cf8c-3122-4ad2-ab40-1acb9f167f29" />
