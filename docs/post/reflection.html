@@ -102,10 +102,10 @@ int main() {
     int N;
     cin &gt;&gt; N;
 
-    while (N--) {
+    while (N--) {           //二维转一维处理
         int start[1001];
         for (int i = 0; i &lt;= 1000; i++) {
-            start[i] = -1;
+            start[i] = -1;          //防止与0冲突
         }
 
         int count = 0;
@@ -124,9 +124,9 @@ int main() {
             int t = h * 60 + m;
 
             if (op == 'S') {
-                start[id] = t;
+                start[id] = t;        //利用[]和值把id与time联系
             } else if (op == 'E') {
-                if (start[id] != -1) {
+                if (start[id] != -1) {     //同时作为判断条件
                     total += t - start[id];
                     count++;
                     start[id] = -1;
@@ -144,7 +144,8 @@ int main() {
 
     return 0;
 }
-</code></pre></div>
+</code></pre>
+<p><strong>1.变量的设置（循环内外与输入安排）  2.利用数组的下标和数量建立对应关系，并可以用于逻辑判断（类布尔）</strong></p></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
