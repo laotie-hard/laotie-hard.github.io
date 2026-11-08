@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>烙铁的博客</title><link>https://laotie-hard.github.io</link><description>某985大一新生学习计算机的日常</description><copyright>烙铁的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://k.sinaimg.cn/n/spider20191226/384/w640h544/20191226/54ab-imfiehq2615626.jpg/w700d1q75cms.jpg</url><title>avatar</title><link>https://laotie-hard.github.io</link></image><lastBuildDate>Sun, 08 Nov 2026 15:48:18 +0000</lastBuildDate><managingEditor>烙铁的博客</managingEditor><ttl>60</ttl><webMaster>烙铁的博客</webMaster><item><title>reflection</title><link>https://laotie-hard.github.io/post/reflection.html</link><description>quesion1:
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>烙铁的博客</title><link>https://laotie-hard.github.io</link><description>某985大一新生学习计算机的日常</description><copyright>烙铁的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://k.sinaimg.cn/n/spider20191226/384/w640h544/20191226/54ab-imfiehq2615626.jpg/w700d1q75cms.jpg</url><title>avatar</title><link>https://laotie-hard.github.io</link></image><lastBuildDate>Sun, 08 Nov 2026 16:03:17 +0000</lastBuildDate><managingEditor>烙铁的博客</managingEditor><ttl>60</ttl><webMaster>烙铁的博客</webMaster><item><title>reflection</title><link>https://laotie-hard.github.io/post/reflection.html</link><description>quesion1:
 天梯图书阅览室请你编写一个简单的图书借阅统计程序。</description><guid isPermaLink="true">https://laotie-hard.github.io/post/reflection.html</guid><pubDate>Thu, 05 Nov 2026 15:24:18 +0000</pubDate></item><item><title>srtp-Ray Tracing in One Weekend</title><link>https://laotie-hard.github.io/post/srtp-Ray%20Tracing%20in%20One%20Weekend.html</link><description># **一：**
 ## 输出图像
 1.
@@ -49,13 +49,14 @@ typedef struct node* linklist;     //linklist:指向结构体的指针or头节�
 2.读取元素
 ```
 void getelem(linklist L,elemtype&amp;e){
-。</description><guid isPermaLink="true">https://laotie-hard.github.io/post/cslearning--shu-ju-jie-gou---lian-shi-xian-xing-biao.html</guid><pubDate>Sun, 01 Nov 2026 13:10:49 +0000</pubDate></item><item><title>输入</title><link>https://laotie-hard.github.io/post/shu-ru.html</link><description>一行若干数：
+。</description><guid isPermaLink="true">https://laotie-hard.github.io/post/cslearning--shu-ju-jie-gou---lian-shi-xian-xing-biao.html</guid><pubDate>Sun, 01 Nov 2026 13:10:49 +0000</pubDate></item><item><title>acm-learning</title><link>https://laotie-hard.github.io/post/acm-learning.html</link><description># 输入
+## 一行若干数：
 ```
 int x;
 while(cin &gt;&gt; x){
 }
 ```
-n行若干数：
+## n行若干数：
 ```
 int n;
 while(cin &gt;&gt; n){ 
@@ -64,7 +65,7 @@ while(cin &gt;&gt; n){
     }
 }
 ```
-若干行若干数：
+## 若干行若干数：
 ```
 #include \&lt;iostream\&gt;
 #include \&lt;string\&gt;
@@ -89,7 +90,12 @@ int main(){
     }
     return 0;
 }
-```。</description><guid isPermaLink="true">https://laotie-hard.github.io/post/shu-ru.html</guid><pubDate>Tue, 20 Oct 2026 01:35:54 +0000</pubDate></item><item><title>cslearning-数据结构-顺序线性表</title><link>https://laotie-hard.github.io/post/cslearning--shu-ju-jie-gou---shun-xu-xian-xing-biao.html</link><description>//由于我先在word上做笔记，部分大小写可能出现混乱（首字母）
+```
+# 前置数学
+
+1. 变量类型的设计：int or double,int or long long... 注意输入数据范围，也可通过乘除顺序的改变控制范围
+2.边界数据值（特值），注意输入数据边界
+3.算法的复杂度，打表防超时。</description><guid isPermaLink="true">https://laotie-hard.github.io/post/acm-learning.html</guid><pubDate>Tue, 20 Oct 2026 01:35:54 +0000</pubDate></item><item><title>cslearning-数据结构-顺序线性表</title><link>https://laotie-hard.github.io/post/cslearning--shu-ju-jie-gou---shun-xu-xian-xing-biao.html</link><description>//由于我先在word上做笔记，部分大小写可能出现混乱（首字母）
 一：线性表
   1.数据元素的有限序列，由起始节点到终端结点，前驱与后继 
   2.1顺序存储：占用一片连续的存储空间
