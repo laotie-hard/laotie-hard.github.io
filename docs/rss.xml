@@ -1,5 +1,68 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>烙铁的博客</title><link>https://laotie-hard.github.io</link><description>某985大一新生学习计算机的日常</description><copyright>烙铁的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://k.sinaimg.cn/n/spider20191226/384/w640h544/20191226/54ab-imfiehq2615626.jpg/w700d1q75cms.jpg</url><title>avatar</title><link>https://laotie-hard.github.io</link></image><lastBuildDate>Thu, 19 Nov 2026 13:48:19 +0000</lastBuildDate><managingEditor>烙铁的博客</managingEditor><ttl>60</ttl><webMaster>烙铁的博客</webMaster><item><title>reflection</title><link>https://laotie-hard.github.io/post/reflection.html</link><description># quesion1:
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>烙铁的博客</title><link>https://laotie-hard.github.io</link><description>某985大一新生学习计算机的日常</description><copyright>烙铁的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://k.sinaimg.cn/n/spider20191226/384/w640h544/20191226/54ab-imfiehq2615626.jpg/w700d1q75cms.jpg</url><title>avatar</title><link>https://laotie-hard.github.io</link></image><lastBuildDate>Thu, 19 Nov 2026 14:48:38 +0000</lastBuildDate><managingEditor>烙铁的博客</managingEditor><ttl>60</ttl><webMaster>烙铁的博客</webMaster><item><title>cslearning-数据结构-栈与队列</title><link>https://laotie-hard.github.io/post/cslearning--shu-ju-jie-gou---zhan-yu-dui-lie.html</link><description># 栈
+1.定义
+```
+typedef int elemtype;
+typedef struct{
+elemtype data[max];
+int top;         //栈顶
+}stack;
+``` 
+
+2.插入
+```
+Status push(stack&amp; s,elemtype e){
+if(s-&gt;top==max-1)
+return error;
+s-&gt;top++;
+s-&gt;data[s-&gt;top]=e;
+return ok;
+}
+```
+
+3.输出
+```
+Status pop(stcak&amp; s,elemtype &amp;e){
+if(s-&gt;top==-1)         //-1表示0（0有下标表示）
+return error;
+e=s-&gt;data[s-&gt;top];
+s-&gt;top--;
+return ok;
+}
+```
+
+# 链栈
+1.定义
+```
+typeddef struct stacknode{
+elemtype data;
+struct stacknode *next;
+}stacknode,*linkstackptr;          //货架
+
+typedef struct
+{
+linkstackptr top;
+int count;
+}linkstack;                  //手册
+```
+
+2.进栈
+```
+Status push(linkstack&amp; S,elemtype e){
+linkstackptr s=new linkstackptr;
+s-&gt;data=e;
+s-&gt;next=S-&gt;top;
+S-&gt;top=s;
+S-&gt;count++;
+return ok;
+}
+```
+
+3.出栈类似，注意指针顺序与delete
+
+# 队列
+## 循环队列
+。</description><guid isPermaLink="true">https://laotie-hard.github.io/post/cslearning--shu-ju-jie-gou---zhan-yu-dui-lie.html</guid><pubDate>Thu, 19 Nov 2026 14:48:10 +0000</pubDate></item><item><title>reflection</title><link>https://laotie-hard.github.io/post/reflection.html</link><description># quesion1:
 天梯图书阅览室请你编写一个简单的图书借阅统计程序。</description><guid isPermaLink="true">https://laotie-hard.github.io/post/reflection.html</guid><pubDate>Thu, 05 Nov 2026 15:24:18 +0000</pubDate></item><item><title>srtp-Ray Tracing in One Weekend</title><link>https://laotie-hard.github.io/post/srtp-Ray%20Tracing%20in%20One%20Weekend.html</link><description># **一：**
 ## 输出图像
 1.
