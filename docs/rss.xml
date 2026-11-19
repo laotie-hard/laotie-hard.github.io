@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>烙铁的博客</title><link>https://laotie-hard.github.io</link><description>某985大一新生学习计算机的日常</description><copyright>烙铁的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://k.sinaimg.cn/n/spider20191226/384/w640h544/20191226/54ab-imfiehq2615626.jpg/w700d1q75cms.jpg</url><title>avatar</title><link>https://laotie-hard.github.io</link></image><lastBuildDate>Sun, 15 Nov 2026 20:38:51 +0000</lastBuildDate><managingEditor>烙铁的博客</managingEditor><ttl>60</ttl><webMaster>烙铁的博客</webMaster><item><title>reflection</title><link>https://laotie-hard.github.io/post/reflection.html</link><description># quesion1:
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>烙铁的博客</title><link>https://laotie-hard.github.io</link><description>某985大一新生学习计算机的日常</description><copyright>烙铁的博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://k.sinaimg.cn/n/spider20191226/384/w640h544/20191226/54ab-imfiehq2615626.jpg/w700d1q75cms.jpg</url><title>avatar</title><link>https://laotie-hard.github.io</link></image><lastBuildDate>Thu, 19 Nov 2026 13:48:19 +0000</lastBuildDate><managingEditor>烙铁的博客</managingEditor><ttl>60</ttl><webMaster>烙铁的博客</webMaster><item><title>reflection</title><link>https://laotie-hard.github.io/post/reflection.html</link><description># quesion1:
 天梯图书阅览室请你编写一个简单的图书借阅统计程序。</description><guid isPermaLink="true">https://laotie-hard.github.io/post/reflection.html</guid><pubDate>Thu, 05 Nov 2026 15:24:18 +0000</pubDate></item><item><title>srtp-Ray Tracing in One Weekend</title><link>https://laotie-hard.github.io/post/srtp-Ray%20Tracing%20in%20One%20Weekend.html</link><description># **一：**
 ## 输出图像
 1.
@@ -35,7 +35,8 @@ int main() {
 ```
 在这段代码中有一些需要注意的地方：
 
-(1)像素按行写出。</description><guid isPermaLink="true">https://laotie-hard.github.io/post/srtp-Ray%20Tracing%20in%20One%20Weekend.html</guid><pubDate>Mon, 02 Nov 2026 09:42:41 +0000</pubDate></item><item><title>cslearning-数据结构-链式线性表</title><link>https://laotie-hard.github.io/post/cslearning--shu-ju-jie-gou---lian-shi-xian-xing-biao.html</link><description>1.线性表的创建
+(1)像素按行写出。</description><guid isPermaLink="true">https://laotie-hard.github.io/post/srtp-Ray%20Tracing%20in%20One%20Weekend.html</guid><pubDate>Mon, 02 Nov 2026 09:42:41 +0000</pubDate></item><item><title>cslearning-数据结构-链式线性表</title><link>https://laotie-hard.github.io/post/cslearning--shu-ju-jie-gou---lian-shi-xian-xing-biao.html</link><description># 单链表
+1.线性表的创建
 ```
 typedef struct node{
        elemtype data;
@@ -45,7 +46,76 @@ typedef struct node* linklist;     //linklist:指向结构体的指针or头节�
 ```
 2.读取元素
 ```
-void getelem(linklist L,elemtype&amp;e){
+Status getelem(linklist L,elemtype&amp;e,int i){
+linklist p=L-&gt;next;
+int j=0;       
+while(p&amp;&amp;j&lt;i){    //p为p!=NULL
+p=p-&gt;next;
+j++;
+}
+if(p!||j&gt;i){
+return error;
+}
+else{
+e=p-&gt;data;
+return true;
+}
+```
+
+3.插入
+```
+Status insert(linklist&amp; L,int i,elemtype e){
+int j=1;
+linklist p=L;    //p为头指针，不是第一个链表
+while(p&amp;&amp;j&lt;i){
+p=p-&gt;next;
+j++;
+}
+linklist s=new linklist;
+s-&gt;data=e;
+s-&gt;next=p-&gt;next;
+p-&gt;next=s;
+return ok;
+}
+```
+
+4.删除，类型同上，注意顺序即可
+
+5.创建
+```
+void creat(linklist&amp; L,int n){
+linklist p,r;
+int i;
+L=new linklist;
+r=L;               //r指向L的尾部
+for(i=0;i&lt;n;i++){
+p=new linklist;
+p-&gt;data=
+r-&gt;next=p;
+r=p;
+}
+r-&gt;next=NULL;
+}
+```
+
+6.删除
+```
+Status delete(linklist&amp; L){
+linklist p,q;
+p=L-&gt;next;
+while(p){
+q=p-&gt;next;
+delete p;
+p=q;
+}
+}
+```
+
+# 循环链表+双向链表（双向循环链表）
+## 循环链表
+引入尾指针rear
+## 双向链表
+引入返回指针prior
 。</description><guid isPermaLink="true">https://laotie-hard.github.io/post/cslearning--shu-ju-jie-gou---lian-shi-xian-xing-biao.html</guid><pubDate>Sun, 01 Nov 2026 13:10:49 +0000</pubDate></item><item><title>acm-learning</title><link>https://laotie-hard.github.io/post/acm-learning.html</link><description># 输入
 ## 一行若干数：
 ```

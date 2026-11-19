@@ -10,7 +10,8 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="1.线性表的创建
+<meta name="description" content="# 单链表
+1.线性表的创建
 ```
 typedef struct node{
        elemtype data;
@@ -20,10 +21,80 @@ typedef struct node* linklist;     //linklist:指向结构体的指针or头节�
 ```
 2.读取元素
 ```
-void getelem(linklist L,elemtype&e){
+Status getelem(linklist L,elemtype&e,int i){
+linklist p=L->next;
+int j=0;       
+while(p&&j<i){    //p为p!=NULL
+p=p->next;
+j++;
+}
+if(p!||j>i){
+return error;
+}
+else{
+e=p->data;
+return true;
+}
+```
+
+3.插入
+```
+Status insert(linklist& L,int i,elemtype e){
+int j=1;
+linklist p=L;    //p为头指针，不是第一个链表
+while(p&&j<i){
+p=p->next;
+j++;
+}
+linklist s=new linklist;
+s->data=e;
+s->next=p->next;
+p->next=s;
+return ok;
+}
+```
+
+4.删除，类型同上，注意顺序即可
+
+5.创建
+```
+void creat(linklist& L,int n){
+linklist p,r;
+int i;
+L=new linklist;
+r=L;               //r指向L的尾部
+for(i=0;i<n;i++){
+p=new linklist;
+p->data=
+r->next=p;
+r=p;
+}
+r->next=NULL;
+}
+```
+
+6.删除
+```
+Status delete(linklist& L){
+linklist p,q;
+p=L->next;
+while(p){
+q=p->next;
+delete p;
+p=q;
+}
+}
+```
+
+# 循环链表+双向链表（双向循环链表）
+## 循环链表
+引入尾指针rear
+## 双向链表
+引入返回指针prior
 。">
 <meta property="og:title" content="cslearning-数据结构-链式线性表">
-<meta property="og:description" content="1.线性表的创建
+<meta property="og:description" content="# 单链表
+1.线性表的创建
 ```
 typedef struct node{
        elemtype data;
@@ -33,7 +104,76 @@ typedef struct node* linklist;     //linklist:指向结构体的指针or头节�
 ```
 2.读取元素
 ```
-void getelem(linklist L,elemtype&e){
+Status getelem(linklist L,elemtype&e,int i){
+linklist p=L->next;
+int j=0;       
+while(p&&j<i){    //p为p!=NULL
+p=p->next;
+j++;
+}
+if(p!||j>i){
+return error;
+}
+else{
+e=p->data;
+return true;
+}
+```
+
+3.插入
+```
+Status insert(linklist& L,int i,elemtype e){
+int j=1;
+linklist p=L;    //p为头指针，不是第一个链表
+while(p&&j<i){
+p=p->next;
+j++;
+}
+linklist s=new linklist;
+s->data=e;
+s->next=p->next;
+p->next=s;
+return ok;
+}
+```
+
+4.删除，类型同上，注意顺序即可
+
+5.创建
+```
+void creat(linklist& L,int n){
+linklist p,r;
+int i;
+L=new linklist;
+r=L;               //r指向L的尾部
+for(i=0;i<n;i++){
+p=new linklist;
+p->data=
+r->next=p;
+r=p;
+}
+r->next=NULL;
+}
+```
+
+6.删除
+```
+Status delete(linklist& L){
+linklist p,q;
+p=L->next;
+while(p){
+q=p->next;
+delete p;
+p=q;
+}
+}
+```
+
+# 循环链表+双向链表（双向循环链表）
+## 循环链表
+引入尾指针rear
+## 双向链表
+引入返回指针prior
 。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://laotie-hard.github.io/post/cslearning--shu-ju-jie-gou---lian-shi-xian-xing-biao.html">
@@ -105,7 +245,8 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><p>1.线性表的创建</p>
+<div class="markdown-body" id="postBody"><h1>单链表</h1>
+<p>1.线性表的创建</p>
 <pre class="notranslate"><code class="notranslate">typedef struct node{
        elemtype data;
        struct node* next;     //自引用struct node
@@ -113,8 +254,68 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 typedef struct node* linklist;     //linklist:指向结构体的指针or头节点（代表一整个线性表）  Ai-&gt;Ai+1(p-&gt;next)
 </code></pre>
 <p>2.读取元素</p>
-<pre class="notranslate"><code class="notranslate">void getelem(linklist L,elemtype&amp;e){
-</code></pre></div>
+<pre class="notranslate"><code class="notranslate">Status getelem(linklist L,elemtype&amp;e,int i){
+linklist p=L-&gt;next;
+int j=0;       
+while(p&amp;&amp;j&lt;i){    //p为p!=NULL
+p=p-&gt;next;
+j++;
+}
+if(p!||j&gt;i){
+return error;
+}
+else{
+e=p-&gt;data;
+return true;
+}
+</code></pre>
+<p>3.插入</p>
+<pre class="notranslate"><code class="notranslate">Status insert(linklist&amp; L,int i,elemtype e){
+int j=1;
+linklist p=L;    //p为头指针，不是第一个链表
+while(p&amp;&amp;j&lt;i){
+p=p-&gt;next;
+j++;
+}
+linklist s=new linklist;
+s-&gt;data=e;
+s-&gt;next=p-&gt;next;
+p-&gt;next=s;
+return ok;
+}
+</code></pre>
+<p>4.删除，类型同上，注意顺序即可</p>
+<p>5.创建</p>
+<pre class="notranslate"><code class="notranslate">void creat(linklist&amp; L,int n){
+linklist p,r;
+int i;
+L=new linklist;
+r=L;               //r指向L的尾部
+for(i=0;i&lt;n;i++){
+p=new linklist;
+p-&gt;data=
+r-&gt;next=p;
+r=p;
+}
+r-&gt;next=NULL;
+}
+</code></pre>
+<p>6.删除</p>
+<pre class="notranslate"><code class="notranslate">Status delete(linklist&amp; L){
+linklist p,q;
+p=L-&gt;next;
+while(p){
+q=p-&gt;next;
+delete p;
+p=q;
+}
+}
+</code></pre>
+<h1>循环链表+双向链表（双向循环链表）</h1>
+<h2>循环链表</h2>
+<p>引入尾指针rear</p>
+<h2>双向链表</h2>
+<p>引入返回指针prior</p></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
